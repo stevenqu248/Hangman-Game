@@ -195,18 +195,16 @@ document.onkeypress = function(event)
 	// early outs
 	if(keyPressed || !game.isRunning)
 	{
-		console.log("preventing multiple characters at the same time or guessing before the game has begun");
 		return;
 	}
-
 	keyPressed = true;
 	var letterArray = ['a','b','c','d','e','f','g','h','i','j','k','l',
 	'm','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 	var isALetter = false;
-	var chosenKey = String.fromCharCode(event.which || event.keyCode);
+	var chosenKey = String.fromCharCode(event.which || event.keyCode).toLowerCase();
 	for(var i = 0; i < letterArray.length; i++)
 	{
-		if(chosenKey === letterArray[i])
+		if(chosenKey == letterArray[i])
 			isALetter = true;
 	}
 
@@ -223,7 +221,7 @@ document.onkeyup = function(event)
 
 function createReplayButton()
 {
-			// create a replay button
+		// create a replay button
 		var button = document.createElement("button");
 		var classAttr = document.createAttribute("class");
 		var clickAttr = document.createAttribute("onclick");
