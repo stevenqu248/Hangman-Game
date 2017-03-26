@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hangman</title>
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="assets/javascript/game.js"></script>
+</head>
+<body style="background: url(assets/images/cubes.png);">
+	<header class="jumbotron text-center headerStyles"><h1>Hangman!</h1></header>
+	<section class="container-fluid" id="gameBody">
+		<div class="row">
+			<div class="col-md-8" id="stockade">
+				<img src="assets/images/stockade.jpg" alt="Oh no! Something has gone terribly wrong and the image failed to load. Please refresh the browser to see if it fixes the issue.">
+				<img id="hangmanProfile" src="assets/images/Hang1.png" alt="">
+			</div>
+			<div class="col-md-4">
+				<div class="row" id="infoArea">
+					<p>Theme: Video Game Series</p>
+					<p id="incorrectLetters">Incorrect Letters:</p>
+					<p id="winCount">Wins: 0</p>
+					
+				</div>
+				<div class="row" id="hiddenWord"></div>
+			</div>
+		</div>
+		<div class="row" id="buttonRow">
+			<button class="col-md-2 col-md-offset-5" onclick="beginGame();" id="gameStart"><h4>Begin Game!</h4></button>			
+		</div>
+	</section>
+</body>
+</html>

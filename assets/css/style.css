@@ -1,0 +1,27 @@
+.headerStyles
+{
+	background-color: black;
+	color: red;
+}
+
+#hiddenWord
+{
+	letter-spacing: 10px;
+	font-size: 20px;
+}
+
+#infoArea
+{
+	margin-bottom: 100px;
+}
+
+#hangmanProfile
+{
+	position: absolute;
+	left: 260px;
+	top: 40px;
+}
+/*#stockade
+{
+	margin-left: -50px;
+}*/
