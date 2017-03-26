@@ -13,7 +13,6 @@ var game =
 	{
 		// Find a word
 		this.selectedWord = this.wordBank[Math.floor(Math.random() * this.wordBank.length)];
-		console.log(this.selectedWord);
 		// And conceal the letters
 		game.hiddenWord = "";
 		for(var i = 0; i < this.selectedWord.length; i++)
@@ -28,7 +27,6 @@ var game =
 				this.hiddenWord += " ";
 			}
 		}
-		console.log(this.hiddenWord);
 	},
 
 	checkLetter: function(letter) 
@@ -43,7 +41,6 @@ var game =
 		}
 
 		this.guessedLetters += letter;
-		console.log(this.guessedLetters);
 
 		// check if you guessed right
 		for(var i = 0; i < this.selectedWord.length; i++)
@@ -105,13 +102,11 @@ var game =
 			var altAttr = picture.getAttributeNode("alt");
 			altAttr.value++;
 			srcAttr.value = "assets/images/Hang" + altAttr.value.toString() + ".png";
-			console.log(srcAttr);
 
 			picture.setAttributeNode(srcAttr);
 			picture.setAttributeNode(altAttr);
 
 		}
-		console.log("hang man moves");
 	},
 
 	updateWindow: function()
@@ -157,7 +152,6 @@ var game =
 		if (hangmanPicture != null) 
 		{
 			var currentPicture = hangmanPicture.getAttribute("alt")
-			console.log("current picture: " + currentPicture);
 			if(currentPicture == 7)
 			{
 				alert("Oh no! Looks like the hangman has earned himself another pair of boots. Game Over!");
@@ -180,7 +174,6 @@ function beginGame()
 	// add the word to the webpage
 	var element = document.getElementById("hiddenWord");
 	element.innerHTML = game.hiddenWord;
-	console.log(game.hiddenWord);
 	element = document.getElementById("incorrectLetters");
 	element.innerHTML = "Incorrect Letters: ";
 
@@ -211,7 +204,6 @@ document.onkeypress = function(event)
 	'm','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 	var isALetter = false;
 	var chosenKey = String.fromCharCode(event.which || event.keyCode);
-	console.log(chosenKey);
 	for(var i = 0; i < letterArray.length; i++)
 	{
 		if(chosenKey === letterArray[i])
@@ -220,7 +212,6 @@ document.onkeypress = function(event)
 
 	if(isALetter)
 	{
-		console.log("Going on to check keys");
 		game.checkLetter(chosenKey);
 	}
 };
